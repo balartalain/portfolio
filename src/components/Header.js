@@ -1,9 +1,24 @@
 import React from 'react';
 import Typed from "react-typed";
+import Particles from "react-particles-js";
 
 const Header = () => {
     return (
-        <div className="header-wrapper">
+        <div id="home" className="header-wrapper">
+            <Particles 
+                className="particles-canvas"
+                params={{
+                particles:{
+                    number: {
+                    value: 30,
+                    density:{
+                        enable: true,
+                        value_area: 900
+                    }
+                    }
+                }
+                }}
+            />
             <div className="main-info">
                 <h1>Web development and website promotions</h1>
                 <Typed className="typed-text"
