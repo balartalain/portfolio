@@ -6,6 +6,7 @@
   --primary-dark: rgba(255,255,255,0);
   --primary-red: #ef4035;
   --primary-hover-red: #f33501;
+  --primary-gray: #f8f8f8;
 }
 
 body{
@@ -111,7 +112,6 @@ nav ul li {
 }
 /************************* ABOUT ME *******************************************/
 .about-section {
-  height: 95vh;  
   max-width: 968px !important;
 }
 @media(max-width: 968px){
@@ -138,4 +138,29 @@ nav ul li {
   border: 2px solid var(--primary-orange);
   border-radius: 50%;
   margin: auto;
+}
+/******************************** PORTFOLIO ****************************************/
+.portfolio-section {
+  margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;  
+  background-color: var(--primary-gray);  
+  align-items: start;
+  padding-bottom: 100px;
+}
+.portfolio-section h1 {
+  color: var(--primary-orange);
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  line-height: 5;
+}
+.portfolio-section .item {
+	/* flex: 1 0 calc(25% - 10px); */
+  box-sizing: border-box;
+  margin: 0px 20px 50px 20px;  
+  padding: 5px;
+  border: 2px solid var(--primary-orange);
 }
