@@ -249,6 +249,7 @@ select:-webkit-autofill:focus
   border-radius: 0;
   padding: 0.625rem 0.75rem 0.75rem 0.75rem;
   color: var(--primary-white);
+  background: transparent;
   cursor: pointer;
 }
 .contact-section .btn-contact:hover{
