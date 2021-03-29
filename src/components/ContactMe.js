@@ -50,7 +50,7 @@ const ContactMe = () => {
                         </form>
 
                         <div className="text-center text-md-right">
-                            <button className="btn-contact" href="#">CONTACT ME</button>
+                            <button className="btn-contact">CONTACT ME</button>
                         </div>
                         <div className="status"></div>
                     </div>
