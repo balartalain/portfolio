@@ -1,6 +1,7 @@
 import React from 'react';
 import Typed from "react-typed";
 import Particles from "react-particles-js";
+import { Link } from "react-scroll";
 
 const Header = () => {
     return (
@@ -26,8 +27,16 @@ const Header = () => {
                     typeSpeed={40}
                     backSpeed={60}
                     loop
-                />
-                <a href="#" className="btn-main-offer">Contact me</a>
+                />            
+                <Link 
+                className="btn-main-offer"    
+                to="contact-me"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500} >
+                Contact me
+            </Link>
             </div>
         </div>
     );
