@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import About from "./components/AboutMe";
 import Portfolio from "./components/Portfolio";
+import ContactMe from "./components/ContactMe"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <About />
       <Portfolio />
+      <ContactMe />
     </>
   );
 }

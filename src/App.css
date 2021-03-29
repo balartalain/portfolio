@@ -18,7 +18,7 @@ body{
 }
 /***************************** MENU LINKS *********************/
 nav a.nav-link {
-  font-size: .8rem;
+  font-size: 0.9rem;
   letter-spacing: 0.0375rem;
   cursor:pointer;
 }
@@ -163,4 +163,99 @@ nav ul li {
   margin: 0px 20px 50px 20px;  
   padding: 5px;
   border: 2px solid var(--primary-orange);
+}
+/***************************** CONTACT ME***********************************************************/
+
+.contact-section{
+  background-color: #343A40;
+  min-height: 95vh;
+  padding: 0 20px;
+}
+.contact-section h1 {
+  color: var(--primary-orange);
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  padding-top: 90px;
+  padding-bottom: 30px;
+}
+.contact-section .subtitle {
+  color: var(--primary-white);
+  width: 100%;
+  text-align: center;
+  font-size: 1.2 rem;
+  margin-bottom: 100px;
+}
+section {
+  max-width: 968px;
+  margin: 0 auto;
+}
+.contact-section form .row {
+  margin-bottom: 20px;
+}
+.contact-section .input-text{
+  color: var(--primary-orange);
+  background: transparent;
+  border-width: 0 0 2px 0;
+  border-color: var(--primary-gray);
+  width: 100%;
+  outline: none;
+  padding: 7px 0;
+}
+.contact-section .input-text:focus {
+  outline: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus
+{
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--primary-orange) !important;
+}
+.contact-section .md-form{
+  position: relative;
+}
+.contact-section .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  height: 2px;
+  background-color: var(--primary-orange);
+  width: 0;
+  transition: .5s;  
+}
+.contact-section .input-text:focus ~ span {
+  width: 100%;  
+}
+.contact-section .md-textarea{
+  display: block;
+  min-height: 160px !important; 
+  max-width:100%;
+}
+.contact-section .btn-contact{
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  border: 1px solid var(--primary-red);
+  text-transform: uppercase;
+  border-radius: 0;
+  padding: 0.625rem 0.75rem 0.75rem 0.75rem;
+  color: var(--primary-white);
+}
+.contact-section .btn-contact:hover{
+  text-decoration: none;
+  background-color: var(--primary-hover-red);
+  transition: .2s ease-in-out;
+}
+@media(max-width: 768px){
+  .contact-section .btn-contact{
+    display: inline;
+  }
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import logo from "../logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 
 const Navbar = () => {
@@ -57,7 +57,9 @@ const Navbar = () => {
                                 spy={true}
                                 smooth={true}
                                 offset={-70}
-                                duration={500} >
+                                duration={500} 
+                                data-toggle="collapse" 
+                                data-target=".show" onClick={handleNavCollapse}>
                                 Portfolio
                             </Link>
                         </li>
@@ -65,11 +67,12 @@ const Navbar = () => {
                             <Link 
                                 className="nav-link" 
                                 activeClass="active"
-                                to="contacts"
+                                to="contact-me"
                                 spy={true}
                                 smooth={true}
                                 offset={-70}
-                                duration={500} >
+                                duration={500} data-toggle="collapse" 
+                                data-target=".show" onClick={handleNavCollapse}>
                                 Contacts
                             </Link>
                         </li>
