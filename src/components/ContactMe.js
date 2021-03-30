@@ -16,13 +16,13 @@ const ContactMe = () => {
                                 <div className="col-md-6">
                                     <div className="md-form mb-0">
                                         <input type="text" id="name" name="name" className="input-text" placeholder="Name"/>  
-                                        <span class="focus-border"></span>                                      
+                                        <span className="focus-border"></span>                                      
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="md-form mb-0">
                                         <input type="text" id="email" name="email" className="input-text" placeholder="Email"/>   
-                                        <span class="focus-border"></span>                                     
+                                        <span className="focus-border"></span>                                     
                                     </div>
                                 </div>
 
@@ -31,7 +31,7 @@ const ContactMe = () => {
                                 <div className="col-md-12">
                                     <div className="md-form mb-0">
                                         <input type="text" id="subject" name="subject" className="input-text" placeholder="Subject" />
-                                        <span class="focus-border"></span>
+                                        <span className="focus-border"></span>
                                     </div>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@ const ContactMe = () => {
 
                                     <div className="md-form mb-0">
                                         <textarea type="text" id="message" name="message" rows="2" className="input-text md-textarea" placeholder="Please describe shortly your project."></textarea>                                           
-                                        <span class="focus-border"></span>                                     
+                                        <span className="focus-border"></span>                                     
                                     </div>
 
                                 </div>
