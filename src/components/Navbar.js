@@ -3,81 +3,93 @@ import logo from "../logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
+import  { Collapse } from "react-bootstrap";
 
 
 const Navbar = () => {
-    const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+    const [open, setOpen] = useState(false);
     useEffect(() => {
-        console.log(isNavCollapsed);
+        console.log(open);
     });
-    const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+    const expanded = () => setOpen(!open); 
+    const collapse = () => { 
+        if (open){
+            setOpen(!open);
+        }
+    }
     return (
         <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-dark shadow" ref={(el) => el && el.style.setProperty("margin", 0, "important")}>
             <div className="container">                
                 <div className="navbar-brand"><img src={logo} alt="logo"/> </div>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" 
+                    onClick={expanded}
+                    aria-controls="example-collapse-text"
+                    aria-expanded={open}
+                >
                     <FontAwesomeIcon icon={ faBars } style={{ color: "#fff" }}/>
                 </button>
 
-                <div className={`collapse navbar-collapse ${isNavCollapsed }`} id="navbarSupportedContent">
-                    <ul className="navbar-nav ml-auto">
-                        <li className="nav-item">
+                <Collapse in={open}>
+                    <div className="navbar-collapse" id="example-collapse-text">               
+                        <ul  className="navbar-nav ml-auto">
+                            <li className="nav-item">
+                                <Link 
+                                    className="nav-link" 
+                                    activeClass="active"
+                                    to="home"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration={500} 
+                                    data-toggle="collapse" 
+                                    data-target=".show" onClick={collapse}>
+                                    Home
+                                </Link>
+                            </li>
+                            <li className="nav-item">
                             <Link 
-                                className="nav-link" 
-                                activeClass="active"
-                                to="home"
-                                spy={true}
-                                smooth={true}
-                                offset={-70}
-                                duration={500} 
-                                data-toggle="collapse" 
-                                data-target=".show" onClick={handleNavCollapse}>
-                                Home
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                        <Link 
-                                className="nav-link" 
-                                activeClass="active"
-                                to="about-me"
-                                spy={true}
-                                smooth={true}
-                                offset={-70}
-                                duration={500} 
-                                data-toggle="collapse" 
-                                data-target=".show" onClick={handleNavCollapse}>
-                                About me
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link 
-                                className="nav-link" 
-                                activeClass="active"
-                                to="portfolio"
-                                spy={true}
-                                smooth={true}
-                                offset={-70}
-                                duration={500} 
-                                data-toggle="collapse" 
-                                data-target=".show" onClick={handleNavCollapse}>
-                                Portfolio
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link 
-                                className="nav-link" 
-                                activeClass="active"
-                                to="contact-me"
-                                spy={true}
-                                smooth={true}
-                                offset={-70}
-                                duration={500} data-toggle="collapse" 
-                                data-target=".show" onClick={handleNavCollapse}>
-                                Contacts
-                            </Link>
-                        </li>
-                    </ul> 
-                </div>
+                                    className="nav-link" 
+                                    activeClass="active"
+                                    to="about-me"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration={500} 
+                                    data-toggle="collapse" 
+                                    data-target=".show" onClick={collapse}>
+                                    About me
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link 
+                                    className="nav-link" 
+                                    activeClass="active"
+                                    to="portfolio"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration={500} 
+                                    data-toggle="collapse" 
+                                    data-target=".show" onClick={collapse}>
+                                    Portfolio
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link 
+                                    className="nav-link" 
+                                    activeClass="active"
+                                    to="contact-me"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration={500} data-toggle="collapse" 
+                                    data-target=".show" onClick={collapse}>
+                                    Contacts
+                                </Link>
+                            </li>
+                        </ul> 
+                    </div>
+                </Collapse>
             </div>            
         </nav>
     )
