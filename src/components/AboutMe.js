@@ -1,5 +1,6 @@
 import React from 'react';
 import picture from "../picture.png";
+import obCertificate from "../openbravo_certificate.png";
 const About = () => {
     return (
         <div id="about-me" className="about-section container-fluid">
@@ -10,9 +11,15 @@ const About = () => {
                 <div className="col-md-6">
                     <h1>About me</h1>
                     <div>
-                        Hello, I'm Alain. I have been developing websites for over 6 years. I'm Full-Stack Web 
+                        Hello, I'm Alain, <br/>Bachelor's Degree in Computer Science 2000-2005.
+                        I have been developing websites for over 8 years. I'm Full-Stack Web 
                         Develper. Tecnologies I use is MERN(MomngoDB, Express, NodeJS and ReactJS).
-                        I create respnsive website that are displayed on all devices desktops and smartphones.  
+                        I create responsive website that are displayed on all devices desktops and smartphones. 
+                        I'm currently a developer at <a href="https://www.openbravo.com/" target="blank">Openbravo</a>
+                        <img className="openbravo-certificate" alt="Certified Developer" 
+                            src={obCertificate}
+                            style={{width: "20rem"}}
+                        />
                     </div>
                 </div>
             </div>
