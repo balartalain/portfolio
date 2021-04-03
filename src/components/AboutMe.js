@@ -13,13 +13,13 @@ const About = () => {
                     <div>
                         Hello, I'm Alain, <br/>Bachelor's Degree in Computer Science 2000-2005.
                         I have been developing websites for over 8 years. I'm Full-Stack Web 
-                        Develper. Tecnologies I use is MERN(MomngoDB, Express, NodeJS and ReactJS).
+                        Developer. Tecnologies I use is MERN(MomngoDB, Express, NodeJS and ReactJS).
                         I create responsive website that are displayed on all devices desktops and smartphones. 
                         I'm currently a developer at <a href="https://www.openbravo.com/" target="blank">Openbravo</a>
-                        <img className="openbravo-certificate" alt="Certified Developer" 
-                            src={obCertificate}
-                            style={{width: "20rem"}}
-                        />
+                        <img alt="Certified Developer" 
+                            src={obCertificate} 
+                            style={{width:"80%", display: "block"}}                               
+                        />                        
                     </div>
                 </div>
             </div>
