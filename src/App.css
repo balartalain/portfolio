@@ -253,7 +253,7 @@ select:-webkit-autofill:focus
 }
 .contact-section .btn-contact{
   display: inline-block;
-  width: 50%;
+  width: 100%;
   text-align: center;
   border: 1px solid var(--primary-red);
   text-transform: uppercase;
@@ -268,9 +268,9 @@ select:-webkit-autofill:focus
   background-color: var(--primary-hover-red);
   transition: .2s ease-in-out;
 }
-@media(max-width: 768px){
-  .contact-section .btn-contact{
-    display: inline;
-    width: 100%;
-  }
+.contact-section .status.success{
+  color: var(--primary-orange);
+}
+.contact-section .status.error{
+  color: var(--primary-red);
 }

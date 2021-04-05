@@ -1,6 +1,35 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import emailjs from 'emailjs-com';
 
 const ContactMe = () => {
+
+    const [status, setStatus] = useState({msg:"", cls:"success"});    
+    useEffect(() => {
+       console.log(status);
+    });
+    const serviceID = 'gmail';
+    const templateID = 'template_vi1vibk';
+    const userID = 'user_e3zP40MCR4N6nh8znK0TQ';
+
+    function sendEmail(e) {
+        e.preventDefault();
+        emailjs.sendForm(serviceID, templateID, e.target, userID)
+          .then((result) => {
+              console.log(result.text);
+              e.target.reset();
+              setStatus({
+                  msg: "Message sent successfully",
+                  cls: "success"
+                });
+          }, (error) => {
+              console.log(error.text);
+              setStatus({
+                msg: "The message could not be sent",
+                cls: "error"
+              });
+          });
+    }
+
     return (        
         <div id="contact-me" className="contact-section">
             <h1>Contact me</h1>      
@@ -9,7 +38,7 @@ const ContactMe = () => {
                 <div className="row">
 
                     <div className="col-md-12 mb-md-0 mb-5">
-                        <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                        <form onSubmit={sendEmail} id="contact-form" name="contact-form" action="mail.php" method="POST">
 
                             <div className="row">
 
@@ -36,7 +65,6 @@ const ContactMe = () => {
                                 </div>
                             </div>
                             <div className="row">
-
                                 <div className="col-md-12">
 
                                     <div className="md-form mb-0">
@@ -46,13 +74,17 @@ const ContactMe = () => {
 
                                 </div>
                             </div>
-
-                        </form>
-
-                        <div className="text-center text-md-right">
-                            <button className="btn-contact">CONTACT ME</button>
-                        </div>
-                        <div className="status"></div>
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <h5 className={`status ${status.cls}`}>{status.msg}</h5>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="text-center text-md-right">
+                                        <button className="btn-contact">CONTACT ME</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>                        
                     </div>
 
                 </div>
